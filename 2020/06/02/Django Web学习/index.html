@@ -6,14 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Daisy</title>
+  <title>Django Web学习 | Daisy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hello World！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Daisy">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="Django Web学习 [TOC] 换了武沛齐老师，不过老师好像很重视基础…行吧先听着吧 第一节课老师试图梳理web框架的逻辑，很重要的一个点是数据库的操作。 这里不记什么了，说一下ORM的原理——其实就是把类转化成sql语句，不然自己写多麻烦啊 Django是啥就是一个Python写的Web框架，开发效率高易上手 换了几个课程了…还是不知道咋入手 Web框架的本质（一）绕来绕去的….想表达什么">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django Web学习">
+<meta property="og:url" content="http://yoursite.com/2020/06/02/Django%20Web%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Daisy">
-<meta property="og:description" content="Hello World！">
+<meta property="og:description" content="Django Web学习 [TOC] 换了武沛齐老师，不过老师好像很重视基础…行吧先听着吧 第一节课老师试图梳理web框架的逻辑，很重要的一个点是数据库的操作。 这里不记什么了，说一下ORM的原理——其实就是把类转化成sql语句，不然自己写多麻烦啊 Django是啥就是一个Python写的Web框架，开发效率高易上手 换了几个课程了…还是不知道咋入手 Web框架的本质（一）绕来绕去的….想表达什么">
+<meta property="article:published_time" content="2020-06-02T14:55:44.874Z">
+<meta property="article:modified_time" content="2020-05-23T01:27:16.735Z">
 <meta property="article:author" content="Daisy">
 <meta name="twitter:card" content="summary">
   
@@ -155,157 +157,194 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Django Web学习" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Django Web学习
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/02/Django%20Web%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+
+        
+        <a href="/2020/06/02/Django%20Web%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
   	<time datetime="2020-06-02T14:55:44.874Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/02/Django%20Web%E5%AD%A6%E4%B9%A0/">Django Web学习</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Django Web学习</p>
+<p>[TOC]</p>
+<p>换了武沛齐老师，不过老师好像很重视基础…行吧先听着吧</p>
+<p>第一节课老师试图梳理web框架的逻辑，很重要的一个点是数据库的操作。</p>
+<p>这里不记什么了，说一下ORM的原理——其实就是把类转化成sql语句，不然自己写多麻烦啊</p>
+<h4 id="Django是啥"><a href="#Django是啥" class="headerlink" title="Django是啥"></a>Django是啥</h4><p>就是一个Python写的Web框架，开发效率高易上手</p>
+<p>换了几个课程了…还是不知道咋入手</p>
+<h4 id="Web框架的本质（一）"><a href="#Web框架的本质（一）" class="headerlink" title="Web框架的本质（一）"></a>Web框架的本质（一）</h4><p>绕来绕去的….想表达什么啊，Web框架的本质不就是客户机发送请求然后服务器返回吗。列一下我Get到的几个点</p>
+<p>1.在访问网站时，我们输入的url一般经过DNS解析器换成IP，可以产生在cmd里面ping一下lofter，会发现ip地址是59.111.239.60</p>
+<p>看了第二遍好像懂些了，客户机发出的请求其实已经被浏览器内置了，比如chrome啊IE啊</p>
+<p>程序员主要做的是服务器端，浏览器发出的请求是带有请求头，同样的，服务器返回的东西也要响应头，响应头之后才是响应体，这才符合规则。</p>
+<p>这样的内容居然讲了半小时….</p>
+<h4 id="Web框架的本质（二）"><a href="#Web框架的本质（二）" class="headerlink" title="Web框架的本质（二）"></a>Web框架的本质（二）</h4><p>要死了好漫长他到底想讲什么….</p>
+<p>诡异了慢慢听吧可能太困了</p>
+<p>咦，有趣的东西来了。来先进一步理解一下访问网站时候发出的get信息</p>
+<p>草！有点东西啊！！！！</p>
+<p>来来来梳理一下，已知客户端发送的请求头包含url信息，那么可以对应这些url信息去构造不同的页面。所以其实真正的网站只有一个！比如<a href="http://www.lofter.com而那之后的/login啊/exit什么的应该都是页面" target="_blank" rel="noopener">www.lofter.com而那之后的/login啊/exit什么的应该都是页面</a></p>
+<p>牛逼！！！！！！！！！！总结不出来！！！！！！！牛逼就完事了！！！！！！！！！</p>
+<h4 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h4><p>非常简单：pip3 install django</p>
+<p>把django-admin.py文件添加到环境变量中去方便运行，就是用户变量的path路径</p>
+<p>下面测试一下是否安装成功：</p>
+<p>django-admin startproject 项目名</p>
+<p>进入项目，运行manage脚本</p>
+<p>python manage.py runserver 127.0.0.1:8080</p>
+<h4 id="第一个Django请求"><a href="#第一个Django请求" class="headerlink" title="第一个Django请求"></a>第一个Django请求</h4><p>不得不说前面学稳了现在听起来就很顺了。</p>
+<p>url.py这个文件其实就是url与函数的对应关系。</p>
+<p>按照Django给出的规则写出url和函数的对应式子</p>
+<p>开始写具体函数，这里还是要遵循Django的规则，处理用户传来的数据，并把返回的数据包装到HttpResponse里面</p>
+<h4 id="静态文件和模板配置"><a href="#静态文件和模板配置" class="headerlink" title="静态文件和模板配置"></a>静态文件和模板配置</h4><p>这个配置还挺麻烦的，记住三点就好</p>
+<p>1.静态页面放在templates目录下</p>
+<p>2.其他静态文件，比如图片啊什么的新建一个名叫static的文件夹（文件名固定死了），然后在settings的最后加上该文件目录，不然Django找不到的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">STATICFILES_DIRS&#x3D;(</span><br><span class="line">    os.path.join(BASE_DIR,&quot;static&quot;),逗号必须要写，不写会报错</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>3.把settings文件里的’django.middleware.csrf.CsrfViewMiddleware’注释掉</p>
+<h4 id="用户登录示例"><a href="#用户登录示例" class="headerlink" title="用户登录示例"></a>用户登录示例</h4><p>这部分有些知识出现空白了所以导致听起来有点吃力，不过没关系，慢慢来嘛。</p>
+<p>突然发现这部分其实就讲了两个点：GET和POST</p>
+<p>GET的用户信息是直接放在url里的，可以直接通过request.GET打印出来</p>
+<p>POST的用户信息是放在请求体里的，也可以直接打印request.POST</p>
+<p>这么长时间我居然就√到这么点信息</p>
+<h4 id="Django中的特殊标记"><a href="#Django中的特殊标记" class="headerlink" title="Django中的特殊标记"></a>Django中的特殊标记</h4>
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/02/Django%20Web%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/02/CSS%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-06-02T14:55:44.772Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/02/CSS%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/02/CSS%E7%AC%94%E8%AE%B0/">CSS笔记</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-06-02T14:55:44.670Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">区块链学习笔记</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%B6%85%E7%BA%A7%E8%B4%A6%E6%9C%AC%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-06-02T14:55:44.538Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%B6%85%E7%BA%A7%E8%B4%A6%E6%9C%AC%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">区块链超级账本环境配置</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/02/Linux%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-06-02T14:55:44.436Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/02/Linux%E7%AC%94%E8%AE%B0/">Linux笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -328,8 +367,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

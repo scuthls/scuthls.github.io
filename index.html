@@ -157,39 +157,275 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Django Web学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/29/hello-world/">Hello World</a>
+      <a class="article-title" href="/2020/06/02/Django%20Web%E5%AD%A6%E4%B9%A0/">Django Web学习</a>
     </h1>
   
 
         
-        <a href="/2020/05/29/hello-world/" class="archive-article-date">
-  	<time datetime="2020-05-29T09:37:33.350Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
+        <a href="/2020/06/02/Django%20Web%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2020-06-02T14:55:44.874Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <p>Django Web学习</p>
+<p>[TOC]</p>
+<p>换了武沛齐老师，不过老师好像很重视基础…行吧先听着吧</p>
+<p>第一节课老师试图梳理web框架的逻辑，很重要的一个点是数据库的操作。</p>
+<p>这里不记什么了，说一下ORM的原理——其实就是把类转化成sql语句，不然自己写多麻烦啊</p>
+<h4 id="Django是啥"><a href="#Django是啥" class="headerlink" title="Django是啥"></a>Django是啥</h4><p>就是一个Python写的Web框架，开发效率高易上手</p>
+<p>换了几个课程了…还是不知道咋入手</p>
+<h4 id="Web框架的本质（一）"><a href="#Web框架的本质（一）" class="headerlink" title="Web框架的本质（一）"></a>Web框架的本质（一）</h4><p>绕来绕去的….想表达什么啊，Web框架的本质不就是客户机发送请求然后服务器返回吗。列一下我Get到的几个点</p>
+<p>1.在访问网站时，我们输入的url一般经过DNS解析器换成IP，可以产生在cmd里面ping一下lofter，会发现ip地址是59.111.239.60</p>
+<p>看了第二遍好像懂些了，客户机发出的请求其实已经被浏览器内置了，比如chrome啊IE啊</p>
+<p>程序员主要做的是服务器端，浏览器发出的请求是带有请求头，同样的，服务器返回的东西也要响应头，响应头之后才是响应体，这才符合规则。</p>
+<p>这样的内容居然讲了半小时….</p>
+<h4 id="Web框架的本质（二）"><a href="#Web框架的本质（二）" class="headerlink" title="Web框架的本质（二）"></a>Web框架的本质（二）</h4><p>要死了好漫长他到底想讲什么….</p>
+<p>诡异了慢慢听吧可能太困了</p>
+<p>咦，有趣的东西来了。来先进一步理解一下访问网站时候发出的get信息</p>
+<p>草！有点东西啊！！！！</p>
+<p>来来来梳理一下，已知客户端发送的请求头包含url信息，那么可以对应这些url信息去构造不同的页面。所以其实真正的网站只有一个！比如<a href="http://www.lofter.com而那之后的/login啊/exit什么的应该都是页面" target="_blank" rel="noopener">www.lofter.com而那之后的/login啊/exit什么的应该都是页面</a></p>
+<p>牛逼！！！！！！！！！！总结不出来！！！！！！！牛逼就完事了！！！！！！！！！</p>
+<h4 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h4><p>非常简单：pip3 install django</p>
+<p>把django-admin.py文件添加到环境变量中去方便运行，就是用户变量的path路径</p>
+<p>下面测试一下是否安装成功：</p>
+<p>django-admin startproject 项目名</p>
+<p>进入项目，运行manage脚本</p>
+<p>python manage.py runserver 127.0.0.1:8080</p>
+<h4 id="第一个Django请求"><a href="#第一个Django请求" class="headerlink" title="第一个Django请求"></a>第一个Django请求</h4><p>不得不说前面学稳了现在听起来就很顺了。</p>
+<p>url.py这个文件其实就是url与函数的对应关系。</p>
+<p>按照Django给出的规则写出url和函数的对应式子</p>
+<p>开始写具体函数，这里还是要遵循Django的规则，处理用户传来的数据，并把返回的数据包装到HttpResponse里面</p>
+<h4 id="静态文件和模板配置"><a href="#静态文件和模板配置" class="headerlink" title="静态文件和模板配置"></a>静态文件和模板配置</h4><p>这个配置还挺麻烦的，记住三点就好</p>
+<p>1.静态页面放在templates目录下</p>
+<p>2.其他静态文件，比如图片啊什么的新建一个名叫static的文件夹（文件名固定死了），然后在settings的最后加上该文件目录，不然Django找不到的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">STATICFILES_DIRS&#x3D;(</span><br><span class="line">    os.path.join(BASE_DIR,&quot;static&quot;),逗号必须要写，不写会报错</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>3.把settings文件里的’django.middleware.csrf.CsrfViewMiddleware’注释掉</p>
+<h4 id="用户登录示例"><a href="#用户登录示例" class="headerlink" title="用户登录示例"></a>用户登录示例</h4><p>这部分有些知识出现空白了所以导致听起来有点吃力，不过没关系，慢慢来嘛。</p>
+<p>突然发现这部分其实就讲了两个点：GET和POST</p>
+<p>GET的用户信息是直接放在url里的，可以直接通过request.GET打印出来</p>
+<p>POST的用户信息是放在请求体里的，也可以直接打印request.POST</p>
+<p>这么长时间我居然就√到这么点信息</p>
+<h4 id="Django中的特殊标记"><a href="#Django中的特殊标记" class="headerlink" title="Django中的特殊标记"></a>Django中的特殊标记</h4>
+      
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/02/Django%20Web%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
+        </p>
+      
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/02/CSS%E7%AC%94%E8%AE%B0/">CSS笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/02/CSS%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-06-02T14:55:44.772Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="前端笔记"><a href="#前端笔记" class="headerlink" title="前端笔记"></a>前端笔记</h4><p>前端三个东西：HTML/CSS/JavaScript</p>
+<p>Title网页头部信息：</p>
+<h4 id="Link"><a href="#Link" class="headerlink" title="Link:"></a>Link:</h4><p>css:</p>
+<p>icon:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel&#x3D;&quot;shortcut icon&quot; href&#x3D;&quot;lofter.png&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>js:</p>
+<p>标签分为块级标签和行内标签</p>
+<h4 id="p标签："><a href="#p标签：" class="headerlink" title="p标签："></a>p标签：</h4><p>p表示一个段落有间距，要换行使用<br /></p>
+<h4 id="a标签："><a href="#a标签：" class="headerlink" title="a标签："></a>a标签：</h4><p>增加target属性表示新开一个窗口，与href都为a标签专属</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;www.baidu.com&quot;&gt;百度&lt;&#x2F;a&gt;</span><br><span class="line">&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;www.baidu.com&quot; target&#x3D;&quot;_blank&quot;&gt;百度2&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
+
+<p>寻找页面中id为i1的标签，将其放置在页面顶部，id属性值不允许重复</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;#i1&quot;&gt;第一章&lt;&#x2F;a&gt;</span><br><span class="line">&lt;a href&#x3D;&quot;#i2&quot;&gt;第二章&lt;&#x2F;a&gt;</span><br><span class="line">&lt;a href&#x3D;&quot;#i2&quot;&gt;第三章&lt;&#x2F;a&gt;</span><br><span class="line">&lt;div id&#x3D;&quot;i1&quot; style&#x3D;&quot;height: 500px&quot;;&gt;第一章内容&lt;&#x2F;div&gt;</span><br><span class="line">&lt;div id&#x3D;&quot;i2&quot; style&#x3D;&quot;height: 500px&quot;;&gt;第二章内容&lt;&#x2F;div&gt;</span><br><span class="line">&lt;div id&#x3D;&quot;i3&quot; style&#x3D;&quot;height: 500px&quot;;&gt;第三章内容&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="h标签："><a href="#h标签：" class="headerlink" title="h标签："></a>h标签：</h4><p>只有6个<h1>到&lt;6&gt;，也可以手动改字体大小</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h6 style&#x3D;&quot;font-size: 60px;&quot;&gt;a&lt;&#x2F;h6&gt;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/02/CSS%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-区块链学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">区块链学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-06-02T14:55:44.670Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="区块链学习笔记"><a href="#区块链学习笔记" class="headerlink" title="区块链学习笔记"></a>区块链学习笔记</h4><h4 id="1-共识算法"><a href="#1-共识算法" class="headerlink" title="1.共识算法"></a>1.共识算法</h4><p>区块链网络是一种去中心化的网络结构，那各个节点之间如何达成共识？</p>
+<p>拜占庭将军问题描述看这篇博客：<a href="https://baijiahao.baidu.com/s?id=1658878826441833031&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">https://baijiahao.baidu.com/s?id=1658878826441833031&amp;wfr=spider&amp;for=pc</a></p>
+        
+          <a class="article-more-a" href="/2020/06/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-区块链超级账本环境配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%B6%85%E7%BA%A7%E8%B4%A6%E6%9C%AC%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">区块链超级账本环境配置</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%B6%85%E7%BA%A7%E8%B4%A6%E6%9C%AC%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2020-06-02T14:55:44.538Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="区块链超级账本环境配置"><a href="#区块链超级账本环境配置" class="headerlink" title="区块链超级账本环境配置"></a>区块链超级账本环境配置</h4><p>1.示例以ubuntu作为系统环境，所以需要先建立一个ubuntu虚拟机</p>
+<p>网盘地址：</p>
+<p>链接：<a href="https://pan.baidu.com/s/1TdGe8HVdYB5TgdU9FrlI3g" target="_blank" rel="noopener">https://pan.baidu.com/s/1TdGe8HVdYB5TgdU9FrlI3g</a><br>提取码：el3s</p>
+<p>按照ubuntu的详细教程：<a href="https://blog.csdn.net/colin_lisicong/article/details/70193539" target="_blank" rel="noopener">https://blog.csdn.net/colin_lisicong/article/details/70193539</a></p>
 
       
 
@@ -202,7 +438,73 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/29/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/06/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%B6%85%E7%BA%A7%E8%B4%A6%E6%9C%AC%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Linux笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/02/Linux%E7%AC%94%E8%AE%B0/">Linux笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/02/Linux%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-06-02T14:55:44.436Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Linux笔记"><a href="#Linux笔记" class="headerlink" title="Linux笔记"></a>Linux笔记</h4><p>1.xshell连接到本地虚拟机（centos）</p>
+<p>首先查看一下虚拟机的ip：在虚拟机终端输入ifconfig，在lo上面那一片找到ip地址，即ens33: 192.168.98.132 </p>
+<p>然后在用户身份验证中输入用户名和密码，点击连接。</p>
+<p>大功告成。</p>
+<h5 id="文件查看的命令"><a href="#文件查看的命令" class="headerlink" title="文件查看的命令"></a>文件查看的命令</h5>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/02/Linux%E7%AC%94%E8%AE%B0/">展开全文 >></a>
         </p>
       
 
