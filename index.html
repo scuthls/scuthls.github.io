@@ -157,6 +157,109 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Django学习内容回顾" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/03/Django%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9%E5%9B%9E%E9%A1%BE/">Django学习内容回顾</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/03/Django%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9%E5%9B%9E%E9%A1%BE/" class="archive-article-date">
+  	<time datetime="2020-06-03T09:53:35.621Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Django学习内容回顾"><a href="#Django学习内容回顾" class="headerlink" title="Django学习内容回顾"></a>Django学习内容回顾</h1><h2 id="1-Web框架本质"><a href="#1-Web框架本质" class="headerlink" title="1.Web框架本质"></a>1.Web框架本质</h2><h3 id="浏览器（socket客户端）"><a href="#浏览器（socket客户端）" class="headerlink" title="浏览器（socket客户端）"></a>浏览器（socket客户端）</h3><p>2.发送IP和端口 <a href="http://www.baidu.com/index/" target="_blank" rel="noopener">http://www.baidu.com/index/</a></p>
+<p>GET:</p>
+<p>​    请求头</p>
+<p>​              htttp1.1 /index?p=123</p>
+<p>​        请求体（无内容）    </p>
+<p>POST:</p>
+<p>​         请求头</p>
+<p>​                htttp1.1 /index?p=123</p>
+<p>​         请求体</p>
+<p>4.接收请求</p>
+<p>​         普通响应：页面直接显示</p>
+<p>​         重定向响应：页面再发起一次Http请求</p>
+<h3 id="服务器（socket服务端）"><a href="#服务器（socket服务端）" class="headerlink" title="服务器（socket服务端）"></a>服务器（socket服务端）</h3><p>1.启动并监听IP和端口</p>
+<p>3.接受请求进行处理，并返回</p>
+<p>​        普通返回</p>
+<p>​               响应头：</p>
+<pre><code>Cache-Control: no-cache,must-revalidate
+Connection: keep-alive
+Content-Encoding: gzip
+Content-Type: text/html;charset=UTF-8
+Date: Wed, 03 Jun 2020 09:45:16 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Pragma: no-cache
+Server: nginx
+Set-Cookie: NTESwebSI=A5246FDE4D8AAD2F911818A7552D59D4.hzayq-lofter-web14.server.163.org-8010; Path=/; HttpOnly
+Set-Cookie: firstentry=%2Flogin.do|; Domain=.lofter.com; Expires=Thu, 04-Jun-2020 09:45:16 GMT; Path=/
+Transfer-Encoding: chunked
+Vary: Accept-Encoding</code></pre><p>​                 响应体：</p>
+<pre><code>&lt;html&gt;&lt;/html&gt;`    </code></pre><p>​            重定向返回</p>
+<pre><code>LOCATION:&quot;http://www.baidu.com/&quot;
+Cache-Control: no-cache,must-revalidate
+Connection: keep-alive
+Content-Encoding: gzip
+Content-Type: text/html;charset=UTF-8
+Date: Wed, 03 Jun 2020 09:45:16 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Pragma: no-cache
+Server: nginx
+Set-Cookie: NTESwebSI=A5246FDE4D8AAD2F911818A7552D59D4.hzayq-lofter-web14.server.163.org-8010; Path=/; HttpOnly
+Set-Cookie: firstentry=%2Flogin.do|; Domain=.lofter.com; Expires=Thu, 04-Jun-2020 09:45:16 GMT; Path=/
+Transfer-Encoding: chunked
+Vary: Accept-Encoding</code></pre><h2 id="2-DjangoWeb框架"><a href="#2-DjangoWeb框架" class="headerlink" title="2.DjangoWeb框架"></a>2.DjangoWeb框架</h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/03/Django%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9%E5%9B%9E%E9%A1%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-六级备考复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
